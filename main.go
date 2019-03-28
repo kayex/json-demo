@@ -58,10 +58,10 @@ func useMap() {
 	// we can let it remain as a float64.
 	age := p["age"].(float64)
 
-	// Update age
+	// Update age.
 	p["age"] = age + 5.0
 
-	// Encode map into json
+	// Encode map into json.
 	out, _ := json.Marshal(p)
 
 	// Write new json to file.
