@@ -16,13 +16,16 @@ func main() {
 
 func useStruct() {
 	// Read entire file contents to memory.
-	data, _ := ioutil.ReadFile("data.json")
+	data, err := ioutil.ReadFile("data.json")
+	if err != nil {
+		panic(err)
+	}
 
 	// Allocate Person.
 	p := Person{}
 
 	// Decode json into Person.
-	err := json.Unmarshal(data, &p)
+	err = json.Unmarshal(data, &p)
 	if err != nil {
 		panic(err)
 	}
@@ -42,13 +45,16 @@ func useStruct() {
 
 func useMap() {
 	// Read entire file contents to memory.
-	data, _ := ioutil.ReadFile("data.json")
+	data, err := ioutil.ReadFile("data.json")
+	if err != nil {
+		panic(err)
+	}
 
 	// Create map.
 	var p map[string]interface{}
 
 	// Decode json.
-	err := json.Unmarshal(data, &p)
+	err = json.Unmarshal(data, &p)
 
 	// Read age, and cast it from interface{} to float64.
 	//
