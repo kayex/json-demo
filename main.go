@@ -54,7 +54,8 @@ func useMap() {
 	//
 	// All json numbers have to be cast to float64 initially, as there are no
 	// separate types for integers and floating point values in json.
-	// Further conversion must be done with another step.
+	// Further conversion would have to be done with another step, but for demonstration purposes
+	// we can let it remain as a float64.
 	age := p["age"].(float64)
 
 	// Update age
